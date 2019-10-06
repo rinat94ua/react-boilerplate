@@ -1,4 +1,5 @@
 import React from 'react';
+import '@babel/polyfill';
 import {hot} from 'react-hot-loader';
 
 class App extends React.Component {

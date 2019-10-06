@@ -10,21 +10,23 @@ module.exports = {
   },
   module: {
     rules: [{
-      test: /\.js$/,
-      loader: 'babel-loader',
-      exclude: /node_modules/,
-      options: {
-        presets: ['@babel/preset-env', '@babel/preset-react'],
-        plugins: [
-          '@babel/plugin-proposal-class-properties'
-        ]
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+        options: {
+          presets: ['@babel/preset-env', '@babel/preset-react'],
+          plugins: [
+            'react-hot-loader/babel',
+            '@babel/plugin-proposal-class-properties'
+          ]
+        }
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+        exclude: /node_modules/
       }
-    },
-  {
-    test: /\.css$/,
-    use: ['style-loader','css-loader'],
-    exclude: /node_modules/
-  }]
+    ]
   },
   plugins: [
     new HTMLWebpackPlugin({

@@ -12,24 +12,7 @@ module.exports = {
     rules: [{
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: /node_modules/,
-        options: {
-          presets: [
-            ['@babel/preset-env', {
-              targets: [
-                'last 2 versions',
-                'not dead',
-                'not < 2%',
-                'not ie 11'
-              ],
-              userBuiltIns: 'entry'
-            }], '@babel/preset-react'
-          ],
-          plugins: [
-            'react-hot-loader/babel',
-            '@babel/plugin-proposal-class-properties'
-          ]
-        }
+        exclude: /node_modules/
       },
       {
         test: /\.css$/,
